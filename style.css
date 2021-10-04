@@ -1,0 +1,74 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: darkblue;
+	max-width: 1200px;
+	width: 100%;
+}
+h1 {
+	color: white;
+	padding: 20px 0 20px 50px;
+}
+.grid-container {
+	width: 1100px;
+	height: 500px;
+	margin:  0 auto;
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 20px;
+	grid-template-areas:
+	'Masonry-I Responsive Overlap Overlap' 
+	'Masonry-I Fluid Explicitly-Placed Negative-Space'
+	'Flexible-Breadth Masonry-II  Explicitly-Placed Masonry-III'  
+	'DOM-Order Masonry-II Named-Tracks Named-Tracks';
+}
+.general-styles{
+	background-color: white;
+	text-align: center;
+	font-size:30px ;
+	color: blue;	
+}
+.box-1{
+	grid-area: Masonry-I;
+	grid-row-start:1 ;
+	grid-row-end: 3;
+}
+.box-3 {
+	grid-area: Overlap;
+	grid-column-start: 3;
+	grid-column-end: 5;
+}
+.box-5 {
+	grid-area: Explicitly-Placed;
+	grid-row: 2/4;
+}
+.box-8 {
+	grid-area: Masonry-II;
+	grid-row: 3/5;
+}
+.box-11 {
+	grid-area: Named-Tracks;
+	grid-column: 3/5;
+}
+
+
+/*
+.box-1 {
+	grid-row: span 2;
+}
+.box-3 {
+	grid-column: span 2;
+}
+.box-5 {
+	grid-row: span 2;
+}
+.box-8 {
+	grid-row: span 2;
+}
+.box-11 {
+	grid-column: span 2;
+} 
+*/
